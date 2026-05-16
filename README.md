@@ -2,6 +2,12 @@
 
 This project implements a discrete-event simulator to evaluate and compare the Standard Routing Information Protocol (RIPv2) and an experimental Composite Metric Routing Protocol (RIP-C).
 
+Team members:
+- Ilankoon I.M.M.K.B. (230256U)
+- Imaduwage O.N.H. (230258D)
+- Jayasinghe J.A.P.R. (230280L)
+- Samarasinghe S.M.R.R. (230566U
+
 ## 1. Getting Started
 
 ### Prerequisites
