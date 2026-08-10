@@ -43,7 +43,7 @@ This project implements a discrete-event simulator to evaluate and compare the S
 
 ## Authors & Acknowledgments
 
-* **Team Lattice** (Department of Electronic & Telecommunication Engineering, University of Moratuwa): *(From Left to Right)*  
+* **Team Lattice** (Department of Electronic & Telecommunication Engineering, University of Moratuwa): 
   * Ilankoon I.M.M.K.B. - 230256U
   * Imaduwage O.N.H. - 230258D
   * Jayasinghe J.A.P.R. - 230280L
