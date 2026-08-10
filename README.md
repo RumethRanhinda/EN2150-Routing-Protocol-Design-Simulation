@@ -40,11 +40,16 @@ While RIP-C optimizes speed and routing efficiency, it introduces a few structur
 
 This project implements a discrete-event simulator to evaluate and compare the Standard Routing Information Protocol (RIPv2) and an experimental Composite Metric Routing Protocol (RIP-C).
 
-Team members (Team Lattice):
-- Ilankoon I.M.M.K.B. (230256U)
-- Imaduwage O.N.H. (230258D)
-- Jayasinghe J.A.P.R. (230280L)
-- Samarasinghe S.M.R.R. (230566U)
+
+## Authors & Acknowledgments
+
+* **Team Lattice** (Department of Electronic & Telecommunication Engineering, University of Moratuwa): *(From Left to Right)*  
+  * Ilankoon I.M.M.K.B. - 230256U
+  * Imaduwage O.N.H. - 230258D
+  * Jayasinghe J.A.P.R. - 230280L
+  * Samarasinghe S.M.R.R. - 230566U
+
+
 
 ---
 
