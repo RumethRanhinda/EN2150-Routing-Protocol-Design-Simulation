@@ -1,13 +1,13 @@
+# RIP-C and Standard RIPv2 Simulation
+
 ## Project Summary
 
-**EN2150 Communication Network Engineering - Routing Protocol Design**[cite: 1]
-
-This project introduces **Routing Information Protocol - Composite (RIP-C)**, an enhanced interior gateway protocol developed by Team Lattice (Ilankoon I.M.M.K.B., Imaduwage O.N.H., Jayasinghe J.A.P.R., and Samarasinghe S.M.R.R.)[cite: 1]. RIP-C is designed to overcome the primary limitations of legacy RIPv2, specifically its reliance on a simple hop-count metric and its slow convergence times[cite: 1].
+This project introduces **Routing Information Protocol - Composite (RIP-C)**, an enhanced interior gateway protocol developed by Team Lattice. RIP-C is designed to overcome the primary limitations of legacy RIPv2, specifically its reliance on a simple hop-count metric and its slow convergence times.
 
 **Key Architectural Enhancements:**
-* **Composite Metric:** RIP-C replaces the standard hop-count with a normalized, bandwidth-and-latency-aware composite metric[cite: 1]. This allows the protocol to intelligently differentiate between high-capacity fiber links and slower, congested connections[cite: 1].
-* **Event-Driven Updates:** The architecture shifts from a timer-based broadcast model (sending updates every 30 seconds) to a purely event-driven framework using Triggered Updates[cite: 1]. Routers only broadcast changes when a link state shifts, a sequence number increments, or a metric changes[cite: 1].
-* **Destination Sequence Numbers:** By implementing authoritative Destination Sequence Numbers, RIP-C inherently eliminates routing loops and the "counting to infinity" vulnerability[cite: 1]. This instantly invalidates stale paths and renders legacy hold-down timers obsolete[cite: 1].
+* **Composite Metric:** RIP-C replaces the standard hop-count with a normalized, bandwidth-and-latency-aware composite metric. This allows the protocol to intelligently differentiate between high-capacity fiber links and slower, congested connections.
+* **Event-Driven Updates:** The architecture shifts from a timer-based broadcast model (sending updates every 30 seconds) to a purely event-driven framework using Triggered Updates. Routers only broadcast changes when a link state shifts, a sequence number increments, or a metric changes.
+* **Destination Sequence Numbers:** By implementing authoritative Destination Sequence Numbers, RIP-C inherently eliminates routing loops and the "counting to infinity" vulnerability. This instantly invalidates stale paths and renders legacy hold-down timers obsolete.
 
 *(📸 **Add an image/video here:** Consider adding a GIF or image of the `RIP-C Route Evaluation Flowchart` from the report to visually explain the algorithm.)*
 
@@ -15,37 +15,38 @@ This project introduces **Routing Information Protocol - Composite (RIP-C)**, an
 
 ## Simulation Results and Evaluation
 
-The performance of RIP-C was evaluated against standard RIPv2 using a customized simulation network topology[cite: 1]. The implementation of the composite metric and event-driven updates yielded significant performance enhancements[cite: 1].
+The performance of RIP-C was evaluated against standard RIPv2 using a customized simulation network topology. The implementation of the composite metric and event-driven updates yielded significant performance enhancements.
 
 ### Initial Boot Convergence
 During the initial network convergence phase, RIP-C dramatically outperformed standard RIPv2 across multiple metrics:
-* **Convergence Time:** Achieved an **84.2% reduction** in convergence time, dropping from 5.02 seconds in RIPv2 to just 0.79 seconds[cite: 1].
-* **Average Latency:** Optimized average path latency by **79.0%** (from 61.50 ms down to 12.86 ms)[cite: 1].
-* **Bottleneck Bandwidth:** Increased average bottleneck bandwidth by **101.0%** (from 2340.36 Mbps to 4721.43 Mbps)[cite: 1].
+* **Convergence Time:** Achieved an **84.2% reduction** in convergence time, dropping from 5.02 seconds in RIPv2 to just 0.79 seconds.
+* **Average Latency:** Optimized average path latency by **79.0%** (from 61.50 ms down to 12.86 ms).
+* **Bottleneck Bandwidth:** Increased average bottleneck bandwidth by **101.0%** (from 2340.36 Mbps to 4721.43 Mbps).
 
 *(📸 **Add an image here:** A screenshot of the terminal output showing the "Comparative Analysis of Initial Boot Convergence Metrics" would fit perfectly here.)*
 
 ### Dynamic Resilience (Link Failure)
-A secondary experiment tested the network's resilience by simulating a physical failure on a high-speed core link (Node A to Node C)[cite: 1]. 
-* **Legacy RIPv2:** Suffered a recovery convergence time of 182.307 seconds due to reliance on wait timers and "counting to infinity"[cite: 1].
-* **RIP-C:** Achieved instantaneous recovery with a **0.000 s convergence time**, instantly flushing stale paths from the network[cite: 1].
+A secondary experiment tested the network's resilience by simulating a physical failure on a high-speed core link (Node A to Node C). 
+* **Legacy RIPv2:** Suffered a recovery convergence time of 182.307 seconds due to reliance on wait timers and "counting to infinity".
+* **RIP-C:** Achieved instantaneous recovery with a **0.000 s convergence time**, instantly flushing stale paths from the network.
 
 *(🎥 **Add a video here:** A short video recording of the simulation running the link-failure event side-by-side (RIPv2 vs. RIP-C) would perfectly demonstrate the real-time recovery speed.)*
 
 ### Known Trade-offs
 While RIP-C optimizes speed and routing efficiency, it introduces a few structural trade-offs:
-* **Payload Overhead:** The routing entry payload size increases by 60% (from 20 bytes to 32 bytes) to accommodate the new composite metric variables and sequence numbers[cite: 1].
-* **Parameter Synchronization:** The protocol requires strict domain-wide synchronization of the metric weightings ($K_{1}$ and $K_{2}$); misconfigurations can result in asymmetric path costs and artificial loops[cite: 1].
+* **Payload Overhead:** The routing entry payload size increases by 60% (from 20 bytes to 32 bytes) to accommodate the new composite metric variables and sequence numbers.
+* **Parameter Synchronization:** The protocol requires strict domain-wide synchronization of the metric weightings ($K_{1}$ and $K_{2}$); misconfigurations can result in asymmetric path costs and artificial loops.
 
-# RIP-C and Standard RIPv2 Simulation
 
 This project implements a discrete-event simulator to evaluate and compare the Standard Routing Information Protocol (RIPv2) and an experimental Composite Metric Routing Protocol (RIP-C).
 
-Team members:
+Team members (Team Lattice):
 - Ilankoon I.M.M.K.B. (230256U)
 - Imaduwage O.N.H. (230258D)
 - Jayasinghe J.A.P.R. (230280L)
 - Samarasinghe S.M.R.R. (230566U)
+
+---
 
 ## 1. Getting Started
 
