@@ -9,7 +9,7 @@ This project introduces **Routing Information Protocol - Composite (RIP-C)**, an
 * **Event-Driven Updates:** The architecture shifts from a timer-based broadcast model (sending updates every 30 seconds) to a purely event-driven framework using Triggered Updates. Routers only broadcast changes when a link state shifts, a sequence number increments, or a metric changes.
 * **Destination Sequence Numbers:** By implementing authoritative Destination Sequence Numbers, RIP-C inherently eliminates routing loops and the "counting to infinity" vulnerability. This instantly invalidates stale paths and renders legacy hold-down timers obsolete.
 
-*(📸 **Add an image/video here:** Consider adding a GIF or image of the `RIP-C Route Evaluation Flowchart` from the report to visually explain the algorithm.)*
+![Flowchart](Images/Flowchart.png)
 
 ---
 
@@ -23,14 +23,15 @@ During the initial network convergence phase, RIP-C dramatically outperformed st
 * **Average Latency:** Optimized average path latency by **79.0%** (from 61.50 ms down to 12.86 ms).
 * **Bottleneck Bandwidth:** Increased average bottleneck bandwidth by **101.0%** (from 2340.36 Mbps to 4721.43 Mbps).
 
-*(📸 **Add an image here:** A screenshot of the terminal output showing the "Comparative Analysis of Initial Boot Convergence Metrics" would fit perfectly here.)*
+![Simulation Results](Images/sim_results.jpg)
 
 ### Dynamic Resilience (Link Failure)
 A secondary experiment tested the network's resilience by simulating a physical failure on a high-speed core link (Node A to Node C). 
 * **Legacy RIPv2:** Suffered a recovery convergence time of 182.307 seconds due to reliance on wait timers and "counting to infinity".
 * **RIP-C:** Achieved instantaneous recovery with a **0.000 s convergence time**, instantly flushing stale paths from the network.
 
-*(🎥 **Add a video here:** A short video recording of the simulation running the link-failure event side-by-side (RIPv2 vs. RIP-C) would perfectly demonstrate the real-time recovery speed.)*
+![failure results legacy](Images/failure_results_legacy.jpg)
+![failure results new](Images/failure_results_new.jpg)
 
 ### Known Trade-offs
 While RIP-C optimizes speed and routing efficiency, it introduces a few structural trade-offs:
