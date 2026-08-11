@@ -28,9 +28,8 @@ During the initial network convergence phase, RIP-C dramatically outperformed st
 ### Dynamic Resilience (Link Failure)
 A secondary experiment tested the network's resilience by simulating a physical failure on a high-speed core link (Node A to Node C). 
 * **Legacy RIPv2:** Suffered a recovery convergence time of 182.307 seconds due to reliance on wait timers and "counting to infinity".
-* **RIP-C:** Achieved instantaneous recovery with a **0.000 s convergence time**, instantly flushing stale paths from the network.
-
 ![failure results legacy](Images/failure_results_legacy.jpg)
+* **RIP-C:** Achieved instantaneous recovery with a **0.000 s convergence time**, instantly flushing stale paths from the network.
 ![failure results new](Images/failure_results_new.jpg)
 
 ### Known Trade-offs
